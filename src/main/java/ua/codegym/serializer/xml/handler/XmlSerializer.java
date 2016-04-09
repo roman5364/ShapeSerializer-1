@@ -10,7 +10,7 @@ import java.io.OutputStream;
 
 public class XmlSerializer implements Serializer {
 
-    public void serialize(Shape shape, OutputStream os) throws IOException {
+    public void serialize(Shape shape, OutputStream outputStream) throws IOException {
 
       String type = shape.getType();
       if(type.equals(Square.class.getCanonicalName())){
@@ -19,7 +19,7 @@ public class XmlSerializer implements Serializer {
         int y = square.getY();
         int side = square.getSide();
         String out = String.format("<square x=\"%d\" y=\"%d\" side=\"%d\"></square>",x,y,side);
-        os.write(out.getBytes());
+        outputStream.write(out.getBytes());
       }
       if(type.equals(Circle.class.getCanonicalName())){
         Circle circle = (Circle) shape;
@@ -29,7 +29,7 @@ public class XmlSerializer implements Serializer {
         y = circle.getY();
         int radius = circle.getRadius();
         String out = String.format("<circle x=\"%d\" y=\"%d\" radius=\"%d\"></circle>",x,y,radius);
-        os.write(out.getBytes());
+        outputStream.write(out.getBytes());
       }
 
     }
