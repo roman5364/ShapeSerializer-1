@@ -26,5 +26,4 @@ public class JsonSerializer implements Serializer {
     triangleJsonSerializer.serialize(shape, outputStream);
   }
 
-
 }

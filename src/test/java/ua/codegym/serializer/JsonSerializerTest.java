@@ -2,10 +2,7 @@ package ua.codegym.serializer;
 
 import org.junit.Assert;
 import org.junit.Test;
-import ua.codegym.serializer.shape.Circle;
-import ua.codegym.serializer.shape.Group;
-import ua.codegym.serializer.shape.Shape;
-import ua.codegym.serializer.shape.Triangle;
+import ua.codegym.serializer.shape.*;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -48,6 +45,7 @@ public class JsonSerializerTest {
     Group shape = new Group();
     shape.add(new Triangle(2, 2, 3, 3, 4, 4));
     shape.add(new Circle(0, 1, 5));
+    shape.add(new Square(3,3,2));
     ByteArrayOutputStream out = new ByteArrayOutputStream();
     Serializer json = SerializerFactory.newJsonSerializer();
 
