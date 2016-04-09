@@ -14,8 +14,8 @@ public class SquareJsonSerializer implements Serializer {
     Square square = (Square) shape;
     int x = square.getX();
     int y = square.getY();
-    int side = square.getSide();
-    String out = String.format("{\"nameOfShape\": \"Square\",\"parameters\": {\"x\": %d,\"y\": %d,\"side\": %d}}", x, y,side);
+    int size = square.getSize();
+    String out = String.format("{\"nameOfShape\": \"Square\",\"properties\": {\"x\": %d,\"y\": %d,\"side\": %d}}", x, y,size);
     outputStream.write(out.getBytes());
   }
 }

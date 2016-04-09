@@ -4,12 +4,12 @@ public class Square extends AbstractShape {
 
   private int x;
   private int y;
-  private int side;
+  private int size;
 
-  public Square(int x, int y, int side) {
+  public Square(int x, int y, int size) {
     this.x = x;
     this.y = y;
-    this.side = side;
+    this.size = size;
   }
 
   public int getX() {
@@ -20,7 +20,7 @@ public class Square extends AbstractShape {
     return y;
   }
 
-  public int getSide() {
-    return side;
+  public int getSize() {
+    return size;
   }
 }

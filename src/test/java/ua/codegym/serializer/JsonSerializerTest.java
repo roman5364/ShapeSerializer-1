@@ -37,7 +37,7 @@ public class JsonSerializerTest {
 
     // then
     String output = new String(out.toByteArray());
-    Assert.assertEquals("{\"nameOfShape\": \"Circle\",\"properties\": {\"x\": 0,\"y\": 1,\"radius\": 5}}", output);
+    Assert.assertEquals("{\"nameOfShape\": \"Circle\",\"properties\": {\"x\": 2,\"y\": 3,\"radius\": 5}}", output);
   }
 
   @Test

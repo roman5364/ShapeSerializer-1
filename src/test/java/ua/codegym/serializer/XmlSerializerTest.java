@@ -14,18 +14,18 @@ import static org.junit.Assert.assertEquals;
 public class XmlSerializerTest {
 
   @Test
-  public void verifyThatSingleCircleIsWritingCorrectly()throws IOException {
+  public void verifyThatSingleCircleIsWritingCorrectly() throws IOException {
     //given
-    Shape shape = new Circle(0,1,5);
+    Shape shape = new Circle(0, 1, 5);
     ByteArrayOutputStream out = new ByteArrayOutputStream();
     Serializer xml = SerializerFactory.newXmlSerializer();
 
     //when
-    xml.serialize(shape,out);
+    xml.serialize(shape, out);
 
     // then
     String output = new String(out.toByteArray());
-    assertEquals("<circle x=\"0\" y=\"1\" radius=\"5\"></circle>",output);
+    assertEquals("<circle x=\"0\" y=\"1\" radius=\"5\"></circle>", output);
   }
 
   @Test
@@ -48,7 +48,7 @@ public class XmlSerializerTest {
     // given
     Group group = new Group();
     group.add(new Square(0, 1, 2));
-
+    group.add((new Circle(2, 3, 5)));
     ByteArrayOutputStream out = new ByteArrayOutputStream();
     Serializer xml = SerializerFactory.newXmlSerializer();
 
@@ -57,7 +57,7 @@ public class XmlSerializerTest {
 
     // then
     String output = new String(out.toByteArray());
-    assertEquals("<group><square x=\"0\" y=\"1\" side=\"2\"></square></group>", output);
+    assertEquals("<group><square x=\"0\" y=\"1\" side=\"2\"></square><circle x=\"2\" y=\"3\" radius=\"5\"></circle></group>", output);
   }
 
 }

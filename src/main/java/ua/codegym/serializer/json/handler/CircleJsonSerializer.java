@@ -15,7 +15,7 @@ public class CircleJsonSerializer implements Serializer {
     int x = circle.getX();
     int y = circle.getY();
     int radius = circle.getRadius();
-    String out = String.format("{\"nameOfShape\": \"Circle\",\"parameters\": {\"x\": %d,\"y\": %d,\"radius\": %d}}", x, y,radius);
+    String out = String.format("{\"nameOfShape\": \"Circle\",\"properties\": {\"x\": %d,\"y\": %d,\"radius\": %d}}", x, y,radius);
     outputStream.write(out.getBytes());
   }
 }
