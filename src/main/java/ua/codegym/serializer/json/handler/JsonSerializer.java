@@ -27,14 +27,4 @@ public class JsonSerializer implements Serializer {
   }
 
 
-  public void serializeCircle(Shape shape, OutputStream outputStream) throws IOException {
-    Serializer circleJsonSerializer = new CircleJsonSerializer();
-    circleJsonSerializer.serialize(shape, outputStream);
-  }
-
-
-  public void serializeGroup(Shape shape, OutputStream outputStream) throws IOException {
-    Serializer groupJsonSerializer = new GroupJsonSerializer();
-    groupJsonSerializer.serialize(shape, outputStream);
-  }
 }

@@ -1,10 +1,7 @@
 package ua.codegym.serializer.json.handler;
 
 import ua.codegym.serializer.Serializer;
-import ua.codegym.serializer.shape.Circle;
-import ua.codegym.serializer.shape.Group;
-import ua.codegym.serializer.shape.Shape;
-import ua.codegym.serializer.shape.Triangle;
+import ua.codegym.serializer.shape.*;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -19,6 +16,7 @@ public class GroupJsonSerializer implements Serializer {
     object.put(Circle.class.getCanonicalName(), new CircleJsonSerializer());
     object.put(Group.class.getCanonicalName(), this);
     object.put(Triangle.class.getCanonicalName(), new TriangleJsonSerializer());
+    object.put(Square.class.getCanonicalName(),new SquareJsonSerializer());
   }
 
   @Override
